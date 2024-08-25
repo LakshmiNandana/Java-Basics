@@ -1,0 +1,19 @@
+import java.util.Scanner;
+class main{
+    public static void main (String [] args){
+        Scanner sc=new Scanner (System.in);
+        System.out.println("Enter first number: ");
+        Integer a=sc.nextInt();
+        System.out.println("Enter second number: ");
+        Integer b=sc.nextInt();
+        Integer s=a+b;
+        System.out.println("sum= "+s);
+        Integer d=a-b;
+        System.out.println("difference= "+d);
+        Integer m=a*b;
+        System.out.println("product= "+m);
+        float div=a/b;
+        System.out.println("division= "+div);
+        sc.close();
+    }
+}
