@@ -4,7 +4,7 @@ class main{
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         Random r=new Random();
-        int rnum=r.nextInt(10)+1;
+        int rnum=r.nextInt(100)+1;
         int numofguess=0;
         int gnum=0;
         while(gnum!=rnum){
