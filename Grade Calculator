@@ -1,0 +1,19 @@
+import java.util.Scanner;
+class main{
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter Score: ");
+        float s= sc.nextFloat();
+        if (s>=90 && 100>=s){
+            System.out.println("A");
+        }else if(s>=80 && 89>=s){
+            System.out.println("B");
+        }else if(s>=70 && 79>=s){
+            System.out.println("C");
+        }else if(s>=60 && 69>=s){
+            System.out.println("D");
+        }else {
+            System.out.print("F");
+        }
+    }
+}
