@@ -12,9 +12,9 @@ class main{
             gnum=sc.nextInt();
             numofguess++;
             if(gnum>rnum){
-                System.out.print("Too High. Try Again \n");
+                System.out.print("Too High. Try Again. \n");
             }else if(gnum<rnum){
-                System.out.print("Too low. Try Again \n");
+                System.out.print("Too low. Try Again. \n");
                 
             }else{
                 System.out.println("Right Guess");
