@@ -1,0 +1,26 @@
+import java.util.Scanner;
+import java.util.Random;
+class main{
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        Random r=new Random();
+        int rnum=r.nextInt(10)+1;
+        int numofguess=0;
+        int gnum=0;
+        while(gnum!=rnum){
+            System.out.println("Enter Guess: ");
+            gnum=sc.nextInt();
+            numofguess++;
+            if(gnum>rnum){
+                System.out.print("Too High. Try Again \n");
+            }else if(gnum<rnum){
+                System.out.print("Too low. Try Again \n");
+                
+            }else{
+                System.out.println("Right Guess");
+                
+            }
+        }
+        
+    }
+}
