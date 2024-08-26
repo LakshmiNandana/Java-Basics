@@ -1,0 +1,20 @@
+import java.util.*;
+public class main{
+    public static int remindertheorem(int dividend, int divisor){
+    if(divisor==0){
+        System.out.println("Enter non zero divisor");
+    }
+    return dividend%divisor;
+    }
+    public static void main(String[]args){
+        Scanner sc=new Scanner(System.in);
+        int dividend=sc.nextInt();
+        int divisor=sc.nextInt();
+        try{
+            int rem=remindertheorem(dividend,divisor);
+            System.out.println("reminder= "+ rem);
+        }catch(ArithmeticException e){
+            System.out.println(e.getMessage());
+        }
+    }
+}
