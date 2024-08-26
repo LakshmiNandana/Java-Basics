@@ -1,0 +1,29 @@
+import java.util.*;
+public class main{
+    public static int apples(int m,int k,int s,int n,int e,int w){
+        if (m<s*k){
+            return m;
+        }else if(m<s*k+e+w){
+            return s*k+(m-s*k);
+        }else{
+            return -1;
+        }
+    }
+    public static void main(String[]args){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter apples to be collected: ");
+        int m=sc.nextInt();
+        System.out.println("Enter apples of each tree: ");
+        int k=sc.nextInt();
+        System.out.println("Enter tress in south: ");
+        int s=sc.nextInt();
+        System.out.println("Enter tress in north: ");
+        int n=sc.nextInt();
+        System.out.println("Enter tress in east: ");
+        int e=sc.nextInt();
+        System.out.println("Enter tress in west: ");
+        int w=sc.nextInt();
+        int a=apples(m,k,s,n,e,w);
+        System.out.print(a);
+    }
+}
