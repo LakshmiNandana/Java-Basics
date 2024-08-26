@@ -1,0 +1,37 @@
+import java.util.*;
+
+public class NextBinaryPalindrome {
+    public static boolean isBinaryPalindrome(int num) {
+        String binary = Integer.toBinaryString(num);
+        StringBuilder reverseBinary = new StringBuilder(binary).reverse();
+        return binary.equals(reverseBinary.toString());
+    }
+
+    public static int nextBinaryPalindrome(int num) {
+        num++;
+        while (!isBinaryPalindrome(num)) {
+            num++;
+        }
+        return num;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter your number: ");
+        int n = sc.nextInt();
+        sc.close();
+        StringBuilder binary = new StringBuilder(Integer.toBinaryString(n));
+        System.out.println("Binary representation: " + binary);
+        String b = binary.toString();
+        String b1 = new StringBuilder(b).reverse().toString();
+
+        if (b.equals(b1)) {
+            System.out.println("The binary representation is a palindrome.");
+        } else {
+            System.out.println("The binary representation is not a palindrome.");
+        }
+        int nextPalindrome = nextBinaryPalindrome(n);
+        System.out.println("The next integer with a palindromic binary representation is: " + nextPalindrome);
+        System.out.println("Binary of next palindrome: " + Integer.toBinaryString(nextPalindrome));
+    }
+}
