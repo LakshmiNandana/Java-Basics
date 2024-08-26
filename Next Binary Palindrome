@@ -1,37 +1,30 @@
 import java.util.*;
-
-public class NextBinaryPalindrome {
-    public static boolean isBinaryPalindrome(int num) {
-        String binary = Integer.toBinaryString(num);
-        StringBuilder reverseBinary = new StringBuilder(binary).reverse();
-        return binary.equals(reverseBinary.toString());
-    }
-
-    public static int nextBinaryPalindrome(int num) {
-        num++;
-        while (!isBinaryPalindrome(num)) {
-            num++;
+public class main{
+    public static int isPalindrome(int num){
+        String n=Integer.toBinaryString(num);
+        StringBuilder sb = new StringBuilder(n);
+        String rev=sb.reverse().toString();
+        if (n.equals(rev)){
+            return 1;
+        }else{
+            return 0;
         }
-        return num;
     }
-
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter your number: ");
-        int n = sc.nextInt();
-        sc.close();
-        StringBuilder binary = new StringBuilder(Integer.toBinaryString(n));
-        System.out.println("Binary representation: " + binary);
-        String b = binary.toString();
-        String b1 = new StringBuilder(b).reverse().toString();
-
-        if (b.equals(b1)) {
-            System.out.println("The binary representation is a palindrome.");
-        } else {
-            System.out.println("The binary representation is not a palindrome.");
-        }
-        int nextPalindrome = nextBinaryPalindrome(n);
-        System.out.println("The next integer with a palindromic binary representation is: " + nextPalindrome);
-        System.out.println("Binary of next palindrome: " + Integer.toBinaryString(nextPalindrome));
+    public static void main(String[]args){
+    Scanner sc=new Scanner(System.in);
+    int num=sc.nextInt();
+    int a=isPalindrome(num);
+    if(isPalindrome(num)==1){
+        System.out.println("Palindrome");
+    }else{
+        System.out.println("Not Palindrome");
     }
+    num=num+1;
+    while(isPalindrome(num)==0){
+        num=num+1;
+    }
+    String nextBin=Integer.toBinaryString(num);
+    System.out.println("next:"+num);
+    System.out.println(nextBin);
+}
 }
