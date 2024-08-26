@@ -1,0 +1,22 @@
+   public static void main(String[]args){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter your number: ");
+        int n=sc.nextInt();
+        StringBuilder binary=new StringBuilder();
+        while(n>0){
+            int r=n%2;
+            binary.append(r);
+            n=n/2;
+        }
+        binary.reverse();
+        System.out.println(binary);
+        String b=binary.toString();
+        String b1=binary.reverse().toString();
+        
+        if(b.equals(b1)){
+            System.out.println("palindrome");
+        }else{
+            System.out.println("not");
+        }
+    }
+}
