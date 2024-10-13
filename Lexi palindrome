@@ -1,0 +1,33 @@
+import java.util.*;
+
+public class Main { // Class names should start with an uppercase letter
+    public static String lexi(List<String> strings) {
+        if (strings == null || strings.isEmpty()) {
+            System.out.println("no pali found");
+            return null; // Return null if the input is empty or null
+        }
+        
+        String first = null;
+        
+        for (String str : strings) {
+            if (isPali(str)) {
+                if (first == null || str.compareTo(first) < 0) { // Removed semicolon here
+                    first = str;
+                }
+            }
+        }
+        
+        return first != null ? first : "no pali found"; // Return a message if no palindrome is found
+    }
+
+    public static boolean isPali(String str) {
+        String rev = new StringBuilder(str).reverse().toString();
+        return str.equals(rev); // Return true or false directly
+    }
+
+    public static void main(String[] args) {
+        List<String> strings = Arrays.asList("level", "paachaap", "diva", "venda");
+        String first = lexi(strings);
+        System.out.println(first);
+    }
+}
