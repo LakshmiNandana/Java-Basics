@@ -1,0 +1,30 @@
+import java.util.*;
+public class main{
+    public static long karastuba(long x, long y){
+        if(x<10 || y<10){
+            return x*y;
+        }
+        int xl=String.valueOf(x).length();
+        int yl=String.valueOf(y).length();
+        int max=Math.max(xl,yl);
+        int half=max/2;
+        
+        long f1=x/(long) Math.pow(10,half);
+        long f2=x%(long) Math.pow(10,half);
+        long s1=y/(long) Math.pow(10,half);
+        long s2=y%(long) Math.pow(10,half);
+        
+        long z0=karastuba(f2,s2);
+        long z1=karastuba((f1+f2),(s1+s2));
+        long z2=karastuba(f1,s1);
+        
+        return (z2*(long)Math.pow(10,2*half)+(z1-z2-z0)*(long)Math.pow(10,half)+z0);
+    }
+    public static void main(String[]args){
+        Scanner sc=new Scanner(System.in);
+        long x=sc.nextLong();
+        long y=sc.nextLong();
+        long result=karastuba(x,y);
+        System.out.print(result);
+    }
+}
