@@ -1,0 +1,23 @@
+import java.util.*;
+public class main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int a=sc.nextInt();
+        int c= nextpali(a);
+        System.out.println(c);
+    }
+    public static int nextpali(int n){
+        n++;
+        while(true){
+           if (ispali(n)){
+               return n;
+           }
+          n++;
+        }
+    }
+    public static boolean ispali(int b){
+        String s=Integer.toBinaryString(b);
+        StringBuilder rev=new StringBuilder(s).reverse();
+        return rev.toString().equals(s);
+    }
+}
