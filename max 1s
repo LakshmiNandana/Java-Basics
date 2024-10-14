@@ -1,0 +1,27 @@
+import java.util.*;
+public class main{
+    public static int maxconc(int[]a,int k){
+        int maxOnes=0;
+        int start=0;
+        int rep=0;
+        for(int end=0;end<a.length;end++){
+            if (a[end]==0){
+                rep++;
+            }
+            while(rep>k){
+            if(a[start]==0){
+                rep--;
+            }
+            start++; 
+            }
+            maxOnes=Math.max(maxOnes,end-start+1);
+        }
+       return maxOnes;
+    }
+    public static void main(String[]args){
+        int []a=new int[]{1,1,1,1,1,0,0,0,1,0,1,1,1};
+        int k=1;
+        int res=maxconc(a,k);
+        System.out.println(res);
+    }
+}
